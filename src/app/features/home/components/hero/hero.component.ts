@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-hero.component',
+  selector: 'app-hero',
   imports: [],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css',
+  styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent {
 

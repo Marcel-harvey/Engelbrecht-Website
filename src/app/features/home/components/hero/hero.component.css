@@ -1,0 +1,18 @@
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    background: #f4f7f8;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    margin: 20px 0;
+}
