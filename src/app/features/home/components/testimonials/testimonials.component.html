@@ -1,1 +1,11 @@
-<p>testimonials.component works!</p>
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-grid">
+        @for (t of testimonials; track $index) {
+            <div class="testimonial">
+                <p>"{{t.message}}"</p>
+                <strong>{{t.name}}</strong>
+            </div>
+        }
+    </div>
+</section>
