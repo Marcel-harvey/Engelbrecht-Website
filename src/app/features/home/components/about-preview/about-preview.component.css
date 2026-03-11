@@ -1,0 +1,9 @@
+.about {
+    background: #f9f9f9;
+}
+
+.about-text {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
