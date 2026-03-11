@@ -1,1 +1,67 @@
-<p>navbar.component works!</p>
+<nav class="navbar">
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a 
+            routerLink="/" 
+            class="logo">
+            <img src="/assets/logo-zoom.png" alt="Engelbrecht Wellness">
+            <!-- <span>Engelbrecht therapeutic wellness</span> -->
+        </a>
+
+        <!-- Mobile Button -->
+        <button 
+            class="menu-toggle" 
+            (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Links -->
+        <ul 
+            class="nav-links" 
+            [class.active]="menuOpen()">
+            <li>
+                <a 
+                    routerLink="/" 
+                    routerLinkActive="active">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a 
+                    routerLink="/about"
+                    routerLinkActive="active">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a 
+                    routerLink="/services" 
+                    routerLinkActive="active">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a 
+                    routerLink="/booking" 
+                    routerLinkActive="active">
+                    Book
+                </a>
+            </li>
+
+            <li>
+                <a 
+                    routerLink="/contact" 
+                    routerLinkActive="active">
+                    Contact
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
