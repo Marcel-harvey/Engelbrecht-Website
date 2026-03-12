@@ -1,11 +1,99 @@
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.testimonials {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden;
 }
 
+.slide-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Slider container */
+.slider {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual testimonial cards */
 .testimonial {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+    position: absolute;
+    width: 300px;
+    padding: 25px;
+    opacity: 0;
+
+    border-radius: var(--border-radius);
+    border: 1px solid var(--beige);
+
+    color: var(--beige);
+    background: var(--dark-background-color);
+
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    text-align: center;
+}
+
+/* Text */
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial strong {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Navigation buttons */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+
+    font-size: 2.5rem;
+    color: var(--beige);
+
+    cursor: pointer;
+    z-index: 5;
+
+    transition: opacity 0.2s ease;
+}
+
+.nav:hover {
+    opacity: 0.7;
+}
+
+.nav.left {
+    left: -40px;
+}
+
+.nav.right {
+    right: -40px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .testimonial {
+        width: 240px;
+        padding: 20px;
+    }
+
+    .nav.left {
+        left: 0;
+    }
+
+    .nav.right {
+        right: 0;
+    }
 }
