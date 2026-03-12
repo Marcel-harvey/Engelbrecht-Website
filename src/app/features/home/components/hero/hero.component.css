@@ -1,18 +1,35 @@
 .hero {
-    height: 70vh;
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+
     display: flex;
-    align-items: center;
-    background: #f4f7f8;
+    justify-content: center;
+
+    background-image: url("/assets/Female-massage.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
 .hero-content {
-    max-width: 600px;
+    display: grid;
+    place-items: center;
 }
 
-.hero h1 {
-    font-size: 3rem;
-}
-
-.hero p {
-    margin: 20px 0;
+@media (max-width: 768px) {
+    .hero-content img {
+        width: 70vw;
+        height: auto;
+    }
 }
