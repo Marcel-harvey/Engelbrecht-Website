@@ -1,5 +1,6 @@
 :root {
     --dark-background-color: #111111;
+    --light-background-color: color-mix(in srgb, var(--dark-background-color), white 10%);
     --beige: #F3ECE4;
     --gold: #C6A96B;
     --light-border: #E5DED6;
@@ -14,5 +15,5 @@ body {
     font-family: "Inter", sans-serif;
     padding: 0;
     margin: 0;
-    background-color: color-mix(in srgb, var(--dark-background-color), white 10%);
+    background-color: var(--light-background-color);
 }
