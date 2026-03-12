@@ -1,5 +1,26 @@
 .cta {
     text-align: center;
-    background: #e6f2f5;
+    background: var(--dark-background-color);
     padding: 60px 10%;
+}
+
+.cta h2 {
+    color: var(--gold);
+}
+
+.cta p {
+    color: var(--beige);
+}
+
+.cta a {
+    text-decoration: underline;
+    color: var(--beige);
+    cursor: pointer;
+
+    transition: 
+        color 0.5s;
+}
+
+.cta a:hover {
+    color: var(--gold);
 }
