@@ -1,1 +1,24 @@
-<p>faq.component works!</p>
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+        @for (faq of faqs; track $index; let i = $index) {
+            <div class="faq-wrapper">
+                <div class="faq-question">
+                    <button 
+                        class="faq-question" 
+                        (click)="toggle(i)">
+                        <span>Q - </span>{{faq.question}}
+                    </button>
+                </div>
+                
+                <div 
+                    class="faq-answer" 
+                    [class.show]="openIndex() == i && openIndex() != null">
+                    <span>A - </span> {{faq.answer}}
+                </div>
+            </div>
+
+        }
+    </div>
+</section>
