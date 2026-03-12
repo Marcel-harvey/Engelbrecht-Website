@@ -1,12 +1,36 @@
+.services {
+    margin-top: var(--standard-spacing);
+    width: 90%;
+    margin: auto;
+}
+
+.services h2 {
+    text-align: center;
+}
+
 .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
     gap: 20px;
 }
 
 .service-card {
-    padding: 25px;
-    background: white;
-    border-radius: 10px;
+    padding: var(--standard-spacing);
+    min-width: 300px;
+
+    flex-basis: calc(20% - 20px);
+
+    background-color: var(--dark-background-color);
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-card p {
+    color: var(--beige);
+}
+
+.service-card h3 {
+    color: var(--gold);
 }
