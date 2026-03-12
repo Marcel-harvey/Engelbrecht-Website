@@ -1,9 +1,43 @@
 .about {
-    background: #f9f9f9;
+    background: var(--dark-background-color);
+    border-radius: var(--border-radius);
+
+    width: 105%;
+    padding: var(--standard-spacing);
+    margin: var(--standard-spacing);
+    margin-left: var(--standard-spacing);
+}
+
+.about-content {
+    display: flex;
+    width: 85%;
+    margin-left: auto;
+    align-items: center;
+    padding: 0;
+    gap: 100px;
+}
+
+.about-content img {
+    max-height: 300px;
+
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+
+    margin-right: calc(var(--standard-spacing) * 2);
 }
 
 .about-text {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
+
     text-align: center;
+    line-height: var(--standard-line-height);
+}
+
+.about-text h2 {
+    color: var(--gold);
+}
+
+.about-text p {
+    color: var(--beige);
 }
