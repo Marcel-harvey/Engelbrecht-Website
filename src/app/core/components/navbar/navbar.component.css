@@ -7,9 +7,6 @@
 
     backdrop-filter: blur(20px);
     background: var(--dark-background-color);
-    /* beige glass */
-
-    border-bottom: 1px solid var(--light-border);
 }
 
 /* CONTAINER */
@@ -20,12 +17,12 @@
     padding: 1rem 2rem;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 }
 
 /* LOGO */
-
+/* 
 .logo {
     display: flex;
     align-items: center;
@@ -43,7 +40,7 @@
     font-weight: 600;
     color: var(--gold);
     text-transform: uppercase;
-}
+} */
 
 /* LINKS */
 
@@ -61,6 +58,7 @@
     color: var(--gold);
     font-weight: 500;
     padding-bottom: 4px;
+    cursor: pointer;
 }
 
 .nav-links a::after {
@@ -99,7 +97,7 @@
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: var(--dark-heading-color);
+    background: var(--gold);
     display: block;
 }
 
