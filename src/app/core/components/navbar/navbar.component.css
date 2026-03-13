@@ -16,12 +16,12 @@
     padding: 1rem 2rem;
 
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
 }
 
 /* LOGO */
-/* 
+
 .logo {
     display: flex;
     align-items: center;
@@ -34,12 +34,32 @@
     width: auto;
 }
 
-.logo span {
+/* Brand Layout */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+/* Main Brand */
+
+.brand-main {
+    font-family: "Playfair Display", serif;
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--blue);
+}
+
+/* Subtitle */
+
+.brand-sub {
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-} */
+    color: var(--gold);
+}
 
 /* LINKS */
 
