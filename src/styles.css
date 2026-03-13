@@ -46,6 +46,8 @@ textarea {
     border: none;
     text-decoration: none;
 
+    cursor: pointer;
+
     transition:
         background-color 0.5s;
 }
@@ -55,10 +57,21 @@ textarea {
 }
 
 .second-button {
-    border: 1px solid var(--blue);
     color: var(--beige);
-    padding: 10px 18px;
     background: transparent;
     margin-top: 10px;
+
+    padding: 10px 18px;
+
     border-radius: var(--border-radius);
+    border: 1px solid var(--blue);
+
+    cursor: pointer;
+
+    transition: 
+        border-color 0.5s;
+}
+
+.second-button:hover {
+    border-color: var(--blue-light);
 }
