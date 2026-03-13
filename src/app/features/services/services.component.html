@@ -1,1 +1,132 @@
-<p>services.component works!</p>
+<!-- HERO -->
+<section class="services-hero">
+    <h1>Our Services</h1>
+    <p>Professional wellness treatments designed to relax, restore and rebalance your body.</p>
+</section>
+
+
+<!-- FEATURED SERVICES -->
+<section class="featured-services">
+    <h2>Popular Treatments</h2>
+
+    <div class="featured-grid">
+        @for(service of featured; track service.id) {
+            <div class="featured-card">
+
+                <img [src]="service.image" [alt]="service.name">
+
+                <div class="featured-content">
+                    <h3>{{service.name}}</h3>
+                    <p>{{service.description}}</p>
+
+                    <div class="service-meta">
+                        <span>{{service.duration}} min</span>
+                        <span class="price">{{service.price | currency: 'R ': 'symbol':'1.2-2'}}</span>
+                    </div>
+
+                    <button class="hero-button">Book Now</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+
+<!-- ALL SERVICES -->
+<section class="services-list">
+    <h2>All Treatments</h2>
+
+    <div class="services-grid">
+
+        @for(service of services; track service.id) {
+            <div class="service-card">
+
+                <img [src]="service.image" [alt]="service.name">
+
+                <h3>{{service.name}}</h3>
+
+                <p>{{service.description}}</p>
+
+                <div class="service-meta">
+                    <span>{{service.duration}} min</span>
+                    <span class="price">{{service.price| currency: 'R ': 'symbol':'1.2-2'}}</span>
+                </div>
+
+                <button class="second-button">Book Now</button>
+            </div>
+        }
+    </div>
+</section>
+
+
+<!-- BENEFITS -->
+<section class="benefits">
+    <h2>Why Choose Engelbrecht Wellness</h2>
+
+    <div class="benefits-grid">
+
+        <div class="benefit">
+            <h3>Professional Therapist</h3>
+            <p>Qualified and experienced wellness treatments.</p>
+        </div>
+
+        <div class="benefit">
+            <h3>Premium Products</h3>
+            <p>High-quality oils and skincare products.</p>
+        </div>
+
+        <div class="benefit">
+            <h3>Relaxing Environment</h3>
+            <p>A calm space designed for total relaxation.</p>
+        </div>
+
+        <div class="benefit">
+            <h3>Mobile Service</h3>
+            <p>Enjoy treatments in the comfort of your home.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- PRICING TABLE -->
+<section class="pricing">
+    <h2>Service Pricing</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Duration</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @for(service of services; track service.id) {
+                <tr>
+                    <td>{{service.name}}</td>
+                    <td>{{service.duration}} min</td>
+                    <td>{{service.price | currency: 'R ': 'symbol':'1.2-2'}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="about-cta">
+
+    <div class="container">
+
+        <h2>Ready to Relax and Recover?</h2>
+        <p>Book your massage session today and start your wellness journey.</p>
+
+        <a routerLink="/booking" class="hero-button">
+            Book a Session
+        </a>
+
+    </div>
+
+</section>

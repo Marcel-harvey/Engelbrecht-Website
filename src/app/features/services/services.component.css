@@ -1,0 +1,174 @@
+h2, h3, p {
+    color: var(--gold);
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    color: var(--beige);
+}
+
+.services-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-image: url("/assets/Female-massage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--gold);
+}
+
+.services-hero p {
+    max-width: 600px;
+    margin: auto;
+    color: var(--beige);
+}
+
+
+/* FEATURED */
+
+.featured-services {
+    padding: 80px 20px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.featured-card {
+    display: flex;
+    background-color: var(--dark-background-color);
+    border: 1px solid var(--light-border);
+    border-radius: var(--border-radius);
+}
+
+.featured-card img {
+    width: 140px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 20px;
+}
+
+.featured-content h3 {
+    color: var(--gold);
+}
+
+
+/* SERVICES GRID */
+
+.services-list {
+    padding: 80px 20px;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    width: 250px;
+    padding: 20px;
+    
+    border: 1px solid var(--light-border);
+    border-radius: var(--border-radius);
+    background: var(--dark-background-color);
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+
+/* META */
+
+.service-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.service-meta span {
+    color: var(--beige);
+}
+
+.price {
+    color: var(--gold);
+}
+
+
+/* BENEFITS */
+
+.benefits {
+    padding: 80px 20px;
+    background-color: var(--dark-background-color);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.benefit {
+    text-align: center;
+}
+
+
+/* PRICING */
+
+.pricing {
+    padding: 80px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid var(--light-border);
+}
+
+th {
+    text-align: left;
+    color: var(--gold);
+}
+
+td {
+    color: var(--beige);
+}
+
+/* Call to action */
+.about-cta {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-cta h2 {
+    color: var(--gold);
+}
+
+.about-cta p {
+    color: var(--beige);
+}
