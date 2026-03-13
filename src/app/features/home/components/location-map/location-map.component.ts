@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-location-map.component',
-  imports: [],
+  selector: 'app-location-map',
+  standalone: true,
   templateUrl: './location-map.component.html',
-  styleUrl: './location-map.component.css',
+  styleUrls: ['./location-map.component.css']
 })
-export class LocationMapComponent {
-
-}
+export class LocationMapComponent {}
