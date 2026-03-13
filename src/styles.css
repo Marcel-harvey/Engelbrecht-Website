@@ -3,6 +3,8 @@
     --light-background-color: color-mix(in srgb, var(--dark-background-color), white 10%);
     --beige: #F3ECE4;
     --gold: #C6A96B;
+    --blue: #123B52;
+    --blue-light: #1B4C66;
     --light-border: #E5DED6;
 
     --border-radius: 10px;
@@ -16,4 +18,22 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--light-background-color);
+}
+
+/* Hero Button */
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 30px;
+    background: var(--blue);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+
+    transition:
+        background-color 0.5s;
+}
+
+.hero-button:hover {
+    background-color: var(--blue-light);
 }
