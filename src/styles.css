@@ -32,6 +32,10 @@ textarea {
     resize: none;
 }
 
+li {
+    color: var(--beige);
+}
+
 /* Hero Button */
 .hero-button {
     display: inline-block;
