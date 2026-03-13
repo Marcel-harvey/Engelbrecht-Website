@@ -4,7 +4,7 @@
 
 .location h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--standard-spacing);
     color: var(--gold);
 }
 
@@ -34,7 +34,17 @@
 /* Mobile */
 
 @media (max-width: 768px) {
+    .location {
+        width: 90%;
+        margin: auto;
+        padding: 0;
+    }
+
     .location-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .map-container iframe {
+        height: 200px;
     }
 }
