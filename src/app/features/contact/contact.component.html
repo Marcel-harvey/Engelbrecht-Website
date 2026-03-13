@@ -1,1 +1,105 @@
-<p>contact.component works!</p>
+<!-- HERO -->
+<section class="contact-hero">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>
+            We'd love to hear from you. Whether you have questions,
+            want to book a treatment, or simply need more information,
+            feel free to reach out.
+        </p>
+    </div>
+</section>
+
+
+<!-- CONTACT CONTENT -->
+<section class="contact-section">
+    <div class="container contact-grid">
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+
+            <div class="info-item">
+                <strong>Phone</strong>
+                <p>+27 82 000 0000</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Email</strong>
+                <p>info@engelbrechtwellness.com</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Location</strong>
+                <p>Johannesburg, South Africa</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Business Hours</strong>
+                <p>
+                    Mon - Fri: 9:00 – 18:00 <br>
+                    Saturday: 9:00 – 14:00 <br>
+                    Sunday: Closed
+                </p>
+            </div>
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+                <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    formControlName="name" />
+
+                <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    formControlName="email" />
+
+                <input 
+                    type="text" 
+                    placeholder="Phone Number" 
+                    formControlName="phone" />
+
+                <textarea 
+                    rows="5" 
+                    placeholder="Your Message" 
+                    formControlName="message"></textarea>
+
+                <button type="submit" class="second-button">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- MAP -->
+<section class="map-section">
+
+    <iframe src="https://www.google.com/maps?q=netcare pinehaven&output=embed" width="100%" height="400" style="border:0;"
+        loading="lazy">
+    </iframe>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="about-cta">
+
+    <div class="container">
+
+        <h2>Ready to Relax and Recover?</h2>
+        <p>Book your massage session today and start your wellness journey.</p>
+
+        <a routerLink="/booking" class="hero-button">
+            Book a Session
+        </a>
+
+    </div>
+
+</section>

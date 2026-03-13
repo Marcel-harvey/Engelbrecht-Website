@@ -1,0 +1,109 @@
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* HERO */
+
+.contact-hero {
+    text-align: center;
+
+    background-image: url("/assets/Female-massage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.contact-hero p {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* GRID */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* INFO */
+
+.contact-info h2 {
+    margin-bottom: 25px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--gold);
+}
+
+/* FORM */
+
+.contact-form h2 {
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-border);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* BUTTONS */
+
+.btn-primary {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* MAP */
+
+.map-section iframe {
+    display: block;
+}
+
+/* CTA */
+
+.about-cta {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-cta h2 {
+    color: var(--gold);
+}
+
+.about-cta p {
+    color: var(--beige);
+}
