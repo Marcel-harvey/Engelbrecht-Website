@@ -20,6 +20,18 @@ body {
     background-color: var(--light-background-color);
 }
 
+h1, h2, h3 {
+    color: var(--gold);
+}
+
+p {
+    color: var(--beige);
+}
+
+textarea {
+    resize: none;
+}
+
 /* Hero Button */
 .hero-button {
     display: inline-block;
