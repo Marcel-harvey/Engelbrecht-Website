@@ -1,11 +1,12 @@
 .services {
     margin-top: var(--standard-spacing);
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
 .services h2 {
     text-align: center;
+    color: var(--gold);
 }
 
 .service-grid {
@@ -20,7 +21,7 @@
     padding: var(--standard-spacing);
     min-width: 300px;
 
-    flex-basis: calc(20% - 20px);
+    flex-basis: calc(25% - 5px);
 
     background-color: var(--dark-background-color);
     border-radius: var(--border-radius);
