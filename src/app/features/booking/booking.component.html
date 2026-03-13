@@ -1,1 +1,130 @@
-<p>booking.component works!</p>
+<section class="booking-section">
+    <div class="booking-container">
+        <h2>Book Your Appointment</h2>
+
+        <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input 
+                    type="text" 
+                    id="fullName" 
+                    formControlName="fullName" 
+                    placeholder="John Doe" >
+
+                    @if (submitted() && formControl['fullName'].errors) {
+                        <div class="error">
+                            @if (formControl['fullName'].errors['required']) {
+                                <small>Full Name is required.</small>
+                            }
+                            @if (formControl['fullName'].errors['minLength']) {
+                                <small>Full Name must be at least 3 characters.</small>
+                            }
+                        </div>
+                    }
+            </div>
+
+            <div class="form-group">
+                <label 
+                    for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    formControlName="email" 
+                    placeholder="example@email.com" >
+
+                    @if (submitted() && formControl['email'].errors) {
+                        @if (formControl['email'].errors['required']) {
+                            <small>Email is required.</small>
+                        }
+                        @if (formControl['email'].errors['email']) {
+                            <small>Email must be valid.</small>
+                        }
+                    }
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    formControlName="phone" 
+                    placeholder="+27 123 456 7890" >
+
+                    @if (submitted() && formControl['phone'].errors) {
+                        @if (formControl['phone'].errors['required']) {
+                            <small>Phone number is required.</small>
+                        }
+                        @if (formControl['phone'].errors['pattern']) {
+                            <small>Phone number is invalid.</small>
+                        }
+                    }
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service</label>
+                <select 
+                    id="service" 
+                    formControlName="service" >
+                    <option 
+                        value=""
+                        class="options">Select a Service</option>
+                        @for (s of services(); track $index) {
+                            <option 
+                                [value]="s.id"
+                                class="options" >{{s.name}}</option>
+                        }
+                </select>
+
+                @if (submitted() && formControl['service'].errors) {
+                    <small>Service selection is required.</small>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input 
+                    type="date" 
+                    id="date" 
+                    formControlName="date" >
+
+                    @if (submitted() && formControl['date'].errors) {
+                        <div class="error">
+                            <small>Date is required.</small>
+                        </div>
+                    }
+            </div>
+
+            <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <input 
+                    type="time" 
+                    id="time" 
+                    formControlName="time" >
+
+                    @if (submitted() && formControl['time'].errors) {
+                        <div class="error">
+                            <small>Time is required.</small>
+                        </div>
+                    }
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea 
+                    id="notes" 
+                    formControlName="notes" 
+                    rows="4" 
+                    placeholder="Any special requests..."></textarea>
+            </div>
+
+            <button 
+                type="submit" 
+                class="btn-submit">Book Now</button>
+
+            @if (successMessage) {
+                <p>{{successMessage}}</p>
+            }
+        </form>
+    </div>
+</section>
