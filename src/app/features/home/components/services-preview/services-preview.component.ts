@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { servicesService } from '../../../../shared/services/services.service';
+import { ServiceService } from '../../../../shared/services/services.service';
 import { ServiceInterface } from '../../../../shared/models/service.model';
 import { CurrencyPipe } from '@angular/common';
 
@@ -16,7 +16,7 @@ interface Service {
 })
 export class ServicesPreviewComponent implements OnInit {
   // Service injection
-  private readonly _service = inject(servicesService)
+  private readonly _service = inject(ServiceService)
 
   readonly services = signal<ServiceInterface[] | null>(null);
 
