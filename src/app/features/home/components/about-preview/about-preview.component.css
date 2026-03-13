@@ -41,3 +41,22 @@
 .about-text p {
     color: var(--beige);
 }
+
+@media (max-width: 768px) {
+    .about {
+        width: 90%;
+    }
+
+    .about-content {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .about-content img {
+        width: 100%;
+        margin: auto;
+    }
+    
+}
