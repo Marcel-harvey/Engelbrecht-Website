@@ -1,0 +1,186 @@
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* HERO */
+
+.about-hero {
+    background-image: url("/assets/Female-massage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.about-hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: var(--gold);
+}
+
+.about-hero p {
+    font-size: 18px;
+    color: var(--beige);
+}
+
+
+/* STORY */
+
+.about-story {
+    padding: 80px 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--beige);
+}
+
+
+/* PHILOSOPHY */
+
+.philosophy {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.philosophy h2 {
+    color: var(--gold);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.philosophy-card {
+    background: var(--dark-background-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.philosophy-card h3 {
+    color: var(--gold);
+}
+
+.philosophy-card p {
+    color: var(--beige);
+}
+
+
+/* WHY US */
+
+.why-us {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.why-us h2 {
+    color: var(--gold);
+}
+
+.why-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.why-item {
+    background: var(--dark-background-color);
+    padding: 20px;
+    border-radius: 8px;
+    color: var(--beige);
+}
+
+
+/* QUALIFICATIONS */
+
+.qualifications {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.qualifications h2{
+    color: var(--gold);
+}
+
+.qual-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.qual-card {
+    background: var(--dark-background-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.qual-card h3 {
+    color: var(--gold);
+}
+
+.qual-card p {
+    color: var(--beige);
+}
+
+
+/* CTA */
+
+.about-cta {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-cta h2 {
+    color: var(--gold);
+}
+
+.about-cta p {
+    color: var(--beige);
+}
+
+@media (max-width: 768px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
