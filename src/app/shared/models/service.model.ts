@@ -1,6 +1,10 @@
 export interface ServiceInterface {
-  name: string;
-  description: string;
-  price: number;
-  duration: number;
+    id: number
+    name: string
+    description: string
+    longDescription: string
+    price: number
+    duration: number
+    image: string
+    popular?: boolean
 }
