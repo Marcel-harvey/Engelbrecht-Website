@@ -69,7 +69,7 @@ export class ServiceService {
                 longDescription: 'Deep cleansing facial treatment designed to hydrate, nourish and revitalize your skin while promoting relaxation.',
                 price: 600,
                 duration: 50,
-                image: 'assets/services/facial.jpg'
+                image: 'assets/services/facial.png'
             },
 
             {
@@ -79,7 +79,7 @@ export class ServiceService {
                 longDescription: 'A complete wellness experience combining relaxation techniques and massage to restore balance and energy.',
                 price: 650,
                 duration: 90,
-                image: 'assets/services/wellness.jpg'
+                image: 'assets/services/wellness.png'
             },
 
             {
@@ -89,7 +89,7 @@ export class ServiceService {
                 longDescription: 'Enjoy professional wellness therapy at your location. Perfect for busy clients who prefer treatment at home.',
                 price: 800,
                 duration: 60,
-                image: 'assets/services/mobile.jpg'
+                image: 'assets/services/mobile.png'
             }
 
         ]
