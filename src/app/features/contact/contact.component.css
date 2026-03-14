@@ -81,3 +81,14 @@
     display: block;
     border-radius: var(--border-radius);
 }
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
