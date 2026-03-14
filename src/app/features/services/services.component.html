@@ -11,7 +11,7 @@
 
     <div class="featured-grid">
         @for(service of featured; track service.id) {
-            <div class="featured-card">
+            <div class="featured-card card-gradient">
 
                 <img [src]="service.image" [alt]="service.name">
 
@@ -39,7 +39,7 @@
     <div class="services-grid">
 
         @for(service of services; track service.id) {
-            <div class="service-card">
+            <div class="service-card card-gradient">
 
                 <img [src]="service.image" [alt]="service.name">
 
@@ -60,7 +60,7 @@
 
 
 <!-- BENEFITS -->
-<section class="benefits">
+<section class="benefits card-gradient">
     <h2>Why Choose Engelbrecht Wellness</h2>
 
     <div class="benefits-grid">
@@ -89,11 +89,10 @@
 
 
 <!-- PRICING TABLE -->
-<section class="pricing">
+<section class="pricing card-gradient">
     <h2>Service Pricing</h2>
 
     <table>
-
         <thead>
             <tr>
                 <th>Service</th>

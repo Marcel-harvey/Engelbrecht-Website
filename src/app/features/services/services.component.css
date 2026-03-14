@@ -22,13 +22,11 @@ p {
 .services-hero h1 {
     font-size: 40px;
     margin-bottom: 10px;
-    color: var(--gold);
 }
 
 .services-hero p {
     max-width: 600px;
     margin: auto;
-    color: var(--beige);
 }
 
 
@@ -46,22 +44,16 @@ p {
 
 .featured-card {
     display: flex;
-    background-color: var(--dark-background-color);
-    border: 1px solid var(--light-border);
-    border-radius: var(--border-radius);
 }
 
 .featured-card img {
     width: 140px;
     object-fit: cover;
+    border-radius: var(--border-radius);
 }
 
 .featured-content {
     padding: 20px;
-}
-
-.featured-content h3 {
-    color: var(--gold);
 }
 
 
@@ -82,17 +74,16 @@ p {
 .service-card {
     width: 250px;
     padding: 20px;
-    
-    border: 1px solid var(--light-border);
-    border-radius: var(--border-radius);
-    background: var(--dark-background-color);
+
     text-align: center;
 }
 
 .service-card img {
     width: 100%;
     height: 160px;
+
     object-fit: cover;
+
     margin-bottom: 15px;
 }
 
@@ -119,6 +110,7 @@ p {
 
 .benefits {
     padding: 80px 20px;
+    margin: 80px 20px;
     background-color: var(--dark-background-color);
 }
 
@@ -137,6 +129,7 @@ p {
 
 .pricing {
     padding: 80px 20px;
+    margin: 80px 20px;
 }
 
 table {

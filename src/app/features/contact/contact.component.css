@@ -25,6 +25,10 @@
     margin: auto;
 }
 
+.contact-section {
+    margin: 80px 20px;
+}
+
 /* GRID */
 
 .contact-grid {
@@ -57,38 +61,23 @@
 .contact-form input,
 .contact-form textarea {
     width: 100%;
+
     padding: 14px;
     margin-bottom: 15px;
+
     border: 1px solid var(--light-border);
     border-radius: 6px;
+
     font-size: 14px;
 }
 
-/* BUTTONS */
-
-.btn-primary {
-    background: var(--blue);
-    color: white;
-    border: none;
-    padding: 14px 25px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    opacity: 0.9;
-}
-
-.btn-gold {
-    background: var(--gold);
-    color: white;
-    padding: 14px 30px;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
 /* MAP */
+.map-section {
+    padding: 80px 20px;
+    margin: 80px 20px;
+}
 
 .map-section iframe {
     display: block;
+    border-radius: var(--border-radius);
 }
