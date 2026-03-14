@@ -15,9 +15,12 @@
 body {
     color: var(--dark-heading-color);
     font-family: "Inter", sans-serif;
+
     padding: 0;
     margin: 0;
+
     background-color: var(--light-background-color);
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
