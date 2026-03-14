@@ -149,22 +149,6 @@
     color: var(--beige);
 }
 
-
-/* CTA */
-
-.about-cta {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.about-cta h2 {
-    color: var(--gold);
-}
-
-.about-cta p {
-    color: var(--beige);
-}
-
 @media (max-width: 768px) {
 
     .about-grid {
@@ -182,5 +166,4 @@
     .why-grid {
         grid-template-columns: 1fr;
     }
-
 }

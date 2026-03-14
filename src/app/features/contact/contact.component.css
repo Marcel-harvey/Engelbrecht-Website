@@ -92,18 +92,3 @@
 .map-section iframe {
     display: block;
 }
-
-/* CTA */
-
-.about-cta {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.about-cta h2 {
-    color: var(--gold);
-}
-
-.about-cta p {
-    color: var(--beige);
-}

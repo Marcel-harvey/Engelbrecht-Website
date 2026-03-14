@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CallToActionComponent } from "../../shared/components/call-to-action.component/call-to-action.component";
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CallToActionComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })

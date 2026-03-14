@@ -159,16 +159,3 @@ td {
     color: var(--beige);
 }
 
-/* Call to action */
-.about-cta {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.about-cta h2 {
-    color: var(--gold);
-}
-
-.about-cta p {
-    color: var(--beige);
-}
