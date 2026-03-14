@@ -29,7 +29,8 @@
             <li>
                 <a 
                     [routerLink]="['/']" 
-                    routerLinkActive="active">
+                    routerLinkActive="active"
+                    (click)="menuOpen.set(false)" >
                     Home
                 </a>
             </li>
@@ -37,7 +38,8 @@
             <li>
                 <a 
                     [routerLink]="['/about']"
-                    routerLinkActive="active">
+                    routerLinkActive="active"
+                    (click)="menuOpen.set(false)" >
                     About
                 </a>
             </li>
@@ -45,7 +47,8 @@
             <li>
                 <a 
                     [routerLink]="['/services']" 
-                    routerLinkActive="active">
+                    routerLinkActive="active"
+                    (click)="menuOpen.set(false)" >
                     Services
                 </a>
             </li>
@@ -53,7 +56,8 @@
             <li>
                 <a 
                     [routerLink]="['/booking']" 
-                    routerLinkActive="active">
+                    routerLinkActive="active"
+                    (click)="menuOpen.set(false)" >
                     Book
                 </a>
             </li>
@@ -61,11 +65,11 @@
             <li>
                 <a 
                     [routerLink]="['/contact']" 
-                    routerLinkActive="active">
+                    routerLinkActive="active"
+                    (click)="menuOpen.set(false)" >
                     Contact
                 </a>
             </li>
         </ul>
-
     </div>
 </nav>
