@@ -1,20 +1,21 @@
 .faq {
-    padding: 80px 10%;
-    background: var(--dark-background-color);
+    padding: 80px 0;
+    width: 95%;
+    margin: auto;
 }
 
 .faq h2 {
     text-align: center;
     margin-bottom: 40px;
-    color: var(--gold);
 }
 
 .faq-list {
     max-width: 800px;
     margin: auto;
-    border: 1px solid var(--beige);
-    border-radius: var(--border-radius);
     padding: 18px;
+
+    border: 1px solid var(--blue);
+    border-radius: var(--border-radius);
 }
 
 .faq-wrapper {

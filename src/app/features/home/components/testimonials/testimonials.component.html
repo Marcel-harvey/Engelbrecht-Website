@@ -9,7 +9,7 @@
         <div class="slider">
             @for (t of testimonials; track $index; let i = $index) {
                 <div 
-                    class="testimonial"
+                    class="testimonial card-gradient"
                     [style.transform]="'translateX(' + getOffset(i) * 330 + 'px) scale(' + (i === currentIndex() ? 1 : 0.8) + ')'"
                     [style.opacity]="i === currentIndex() ? 1 : 0.3" >
                     <p>{{t.message}}</p>

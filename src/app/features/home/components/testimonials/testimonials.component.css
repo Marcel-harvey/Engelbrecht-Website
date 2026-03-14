@@ -1,8 +1,10 @@
 .testimonials {
     position: relative;
     width: 100%;
+
     padding: 80px 0;
     text-align: center;
+
     overflow: hidden;
 }
 
@@ -10,6 +12,7 @@
     position: relative;
     width: 100%;
     max-width: 900px;
+
     margin: auto;
 }
 
@@ -17,6 +20,7 @@
 .slider {
     position: relative;
     height: 200px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,13 +33,9 @@
     padding: 25px;
     opacity: 0;
 
-    border-radius: var(--border-radius);
-    border: 1px solid var(--beige);
-
-    color: var(--beige);
-    background: var(--dark-background-color);
-
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: 
+        transform 0.5s ease,
+        opacity 0.5s ease;
 
     text-align: center;
 }
@@ -49,6 +49,7 @@
 .testimonial strong {
     font-size: 0.9rem;
     opacity: 0.8;
+    color: var(--gold);
 }
 
 /* Navigation buttons */

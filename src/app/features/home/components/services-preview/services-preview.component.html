@@ -1,10 +1,10 @@
-<section class="services">
+<section class="services component">
     <h2>Some of Our Services</h2>
     
     <div class="service-grid">
         @for (service of services(); track service.id; let i = $index) {
             @if (i < 6) {
-                <div class="service-card">
+                <div class="service-card card-gradient">
                     <h3>{{service.name}}</h3>
                     <p>{{service.description}}</p>
                     <p>{{ service.price| currency: 'R ': 'symbol':'1.2-2' }}</p>

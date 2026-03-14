@@ -6,7 +6,6 @@
 
 .services h2 {
     text-align: center;
-    color: var(--gold);
 }
 
 .service-grid {
@@ -22,16 +21,4 @@
     min-width: 300px;
 
     flex-basis: calc(25% - 5px);
-
-    background-color: var(--dark-background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.service-card p {
-    color: var(--beige);
-}
-
-.service-card h3 {
-    color: var(--gold);
 }
