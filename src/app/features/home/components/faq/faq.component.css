@@ -1,7 +1,10 @@
 .faq {
-    padding: 80px 0;
     width: 95%;
+    padding: 80px 0;
     margin: auto;
+    margin-bottom: 80px;
+    
+    width: 95%;
 }
 
 .faq h2 {

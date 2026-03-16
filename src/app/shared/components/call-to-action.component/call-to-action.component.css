@@ -12,3 +12,12 @@
 
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .cta {
+        margin: 0 10px;
+        padding: 80px 5px;
+
+        overflow-x: hidden;
+    }
+}
