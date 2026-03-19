@@ -1,7 +1,15 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServiceInterface } from '../../shared/models/service.model';
 import { ServiceService } from '../../shared/services/services.service';
+import { finalize, firstValueFrom } from 'rxjs';
+import { BookingService } from './services/booking.service';
+import { CreateBookingInterface } from './models/booking.model';
+import { CustomerDetailsInterface } from '../../shared/models/customer.model';
+
+type MedicationForm = FormGroup<{
+  name: FormControl<string>;
+}>;
 
 @Component({
   selector: 'app-booking',
