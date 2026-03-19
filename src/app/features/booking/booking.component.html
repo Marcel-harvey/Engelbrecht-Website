@@ -5,23 +5,42 @@
         <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
 
             <div class="form-group">
-                <label for="fullName">Full Name</label>
+                <label for="name">Name</label>
                 <input 
                     type="text" 
-                    id="fullName" 
-                    formControlName="fullName" 
-                    placeholder="John Doe" >
+                    id="name" 
+                    formControlName="name" 
+                    placeholder="John" >
 
-                    @if (submitted() && formControl['fullName'].errors) {
+                    @if (submitted() && formControl['name'].errors) {
                         <div class="error">
-                            @if (formControl['fullName'].errors['required']) {
-                                <small>Full Name is required.</small>
+                            @if (formControl['name'].errors['required']) {
+                                <small>Name is required.</small>
                             }
-                            @if (formControl['fullName'].errors['minLength']) {
-                                <small>Full Name must be at least 3 characters.</small>
+                            @if (formControl['name'].errors['minLength']) {
+                                <small>Name must be at least 3 characters.</small>
                             }
                         </div>
                     }
+            </div>
+
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input 
+                    type="text" 
+                    id="surname" 
+                    formControlName="surname" placeholder="Doe">
+            
+                @if (submitted() && formControl['surname'].errors) {
+                    <div class="error">
+                        @if (formControl['surname'].errors['required']) {
+                        <small>surname is required.</small>
+                        }
+                        @if (formControl['surname'].errors['minLength']) {
+                        <small>surname must be at least 3 characters.</small>
+                        }
+                    </div>
+                }
             </div>
 
             <div class="form-group">
@@ -59,6 +78,14 @@
                             <small>Phone number is invalid.</small>
                         }
                     }
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input 
+                    type="text" 
+                    id="phone" 
+                    formControlName="address">
             </div>
 
             <div class="form-group">
@@ -109,6 +136,46 @@
                     }
             </div>
 
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input 
+                        type="checkbox"
+                        formControlName="onMedication">
+                    <span class="custom-checkbox"></span>
+                    <span class="label-text">On Medication?</span>
+                </label>
+            </div>
+
+            @if (bookingForm.controls.onMedication.value) {
+                <div 
+                    class="form-group" 
+                    formArrayName="medication">
+                    @for (med of medicationArray.controls; track $index; let i = $index) {
+                        <div
+                            class="medication-wrapper" 
+                            [formGroupName]="i">
+                            <input 
+                                type="text"
+                                formControlName="name" 
+                                placeholder="Medication Name">
+                                <button
+                                    class="remove-button"
+                                    type="button"
+                                    (click)="removeMedication(i)">
+                                    Remove
+                                </button>
+                        </div>
+                    }
+                    <button 
+                        class="second-button"
+                        type="button" 
+                        (click)="addMedication()">
+                        Add Medication
+                    </button>
+                </div>  
+            }
+
+
             <div class="form-group">
                 <label for="notes">Additional Notes</label>
                 <textarea 
@@ -120,11 +187,8 @@
 
             <button 
                 type="submit" 
-                class="btn-submit">Book Now</button>
-
-            @if (successMessage) {
-                <p>{{successMessage}}</p>
-            }
+                class="btn-submit">Book Now
+            </button>
         </form>
     </div>
 </section>
