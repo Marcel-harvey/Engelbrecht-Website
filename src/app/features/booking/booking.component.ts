@@ -6,6 +6,7 @@ import { finalize, firstValueFrom } from 'rxjs';
 import { BookingService } from './services/booking.service';
 import { CreateBookingInterface } from './models/booking.model';
 import { CustomerDetailsInterface } from '../../shared/models/customer.model';
+import { MessageService } from '../../shared/services/modal/message.service';
 
 type MedicationForm = FormGroup<{
   name: FormControl<string>;
@@ -22,10 +23,10 @@ export class BookingComponent implements OnInit {
   private readonly fb = inject(FormBuilder);
   private readonly _service = inject(ServiceService);
   private readonly _booking = inject(BookingService);
+  private readonly _modal = inject(MessageService);
 
   // UI State
   readonly submitted = signal<boolean>(false);
-  readonly errorMessage = signal<string>('');
   readonly isLoading = signal<boolean>(false);
 
   readonly services = signal<ServiceInterface[] | null>(null);
@@ -87,7 +88,6 @@ export class BookingComponent implements OnInit {
   }
 
   /**
-   * TODO: Add a popup modal when booking mail is sent
    * Sends the booking request to the backend/server API
    * @recieves BlankApiResponse
    * @returns void
@@ -95,7 +95,6 @@ export class BookingComponent implements OnInit {
   async onSubmit(): Promise<void> {
     this.submitted.set(true);
     this.isLoading.set(true);
-    this.errorMessage.set('');
 
     if (this.bookingForm.invalid) return;
 
@@ -129,11 +128,20 @@ export class BookingComponent implements OnInit {
       );
 
       if (!res.succeeded) {
-        console.error(res.errors);        
-        this.errorMessage.set(res.message);
+        console.error(res.errors);
+        this._modal.open({
+          title: 'Error',
+          message: 'Failed to create booking, please try again',
+          type: 'error'
+        });
+        return;
       }
 
-      // TODO: Add modal trigger here when success
+      this._modal.open({
+        title: 'Success',
+        message: 'Booking created successfully',
+        type: 'success'
+      });
 
       this.bookingForm.reset({
         onMedication: false
@@ -141,7 +149,11 @@ export class BookingComponent implements OnInit {
     }
     catch (err) {
       console.error(err);
-      this.errorMessage.set('Unexpexted error occured, please try again')
+      this._modal.open({
+        title: 'Error',
+        message: 'Unexpected error occured during operation, please try again later',
+        type: 'error'
+      });
     }
   }
 }
