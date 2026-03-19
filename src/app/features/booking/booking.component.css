@@ -80,3 +80,40 @@
     color: red;
     font-size: 0.85rem;
 }
+
+.medication-wrapper {
+    display: flex;
+    gap: var(--standard-spacing);
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: var(--standard-spacing);
+}
+
+.medication-wrapper input {
+    flex: 1;
+    min-width: 0;
+}
+
+.remove-button {
+    flex-shrink: 0;
+
+    color: var(--beige);
+    background: transparent;
+
+    padding: 10px 18px;
+
+    border-radius: var(--border-radius);
+    border: 1px solid red;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.5s;
+}
+
+.remove-button:hover {
+    border-color: lightcoral;
+}
+
