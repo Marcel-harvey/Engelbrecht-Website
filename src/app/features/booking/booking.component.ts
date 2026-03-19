@@ -21,6 +21,7 @@ export class BookingComponent implements OnInit {
   // Depandancies
   private readonly fb = inject(FormBuilder);
   private readonly _service = inject(ServiceService);
+  private readonly _booking = inject(BookingService);
 
   // UI State
   readonly submitted = signal<boolean>(false);
