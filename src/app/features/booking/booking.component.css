@@ -117,3 +117,65 @@
     border-color: lightcoral;
 }
 
+/* Checkbox Design */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide default checkbox */
+.checkbox-label input {
+    display: none;
+}
+
+/* Custom box */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Checkmark */
+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    border: solid var(--beige);
+    border-width: 0 2px 2px 0;
+    top: 2px;
+    left: 6px;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s ease;
+}
+
+/* Checked state */
+.checkbox-label input:checked+.custom-checkbox {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.checkbox-label input:checked+.custom-checkbox::after {
+    transform: rotate(45deg) scale(1);
+}
+
+/* Hover effect */
+.checkbox-label:hover .custom-checkbox {
+    border-color: var(--blue-light);
+}
+
+.label-text {
+    color: var(--beige);
+    font-weight: 500;
+}
