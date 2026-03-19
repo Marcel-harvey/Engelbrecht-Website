@@ -86,19 +86,62 @@ export class BookingComponent implements OnInit {
     this.formControl.onMedication.patchValue(true);
   }
 
+  /**
+   * TODO: Add a popup modal when booking mail is sent
+   * Sends the booking request to the backend/server API
+   * @recieves BlankApiResponse
+   * @returns void
+   */
   async onSubmit(): Promise<void> {
     this.submitted.set(true);
+    this.isLoading.set(true);
+    this.errorMessage.set('');
 
-    if (this.bookingForm.invalid) {
-      return;
+    if (this.bookingForm.invalid) return;
+
+    // Create the customer interface for the payload
+    const customer: CustomerDetailsInterface =  {
+      name: this.formControl.name.value,
+      surname: this.formControl.surname.value,
+      email: this.formControl.email.value,
+      phoneNumber: this.formControl.phone.value,
+      address: this.formControl.address.value
     }
 
-    const bookingData = this.bookingForm.value;
-    console.log('Booking Data:', bookingData);
+    const payload: CreateBookingInterface = {
+      customer: customer,
+      serviceType: {id: Number(this.formControl.service.value)},
+      date: {date: this.formControl.date.value},
+      medication: this.medicationArray.value
+        .map(m => m.name)
+        .filter((name): name is string => !!name),
+      reason: this.formControl.notes.value
+    };
 
-    // Placeholder for backend integration
-    this.successMessage = 'Your booking request has been sent successfully!';
-    this.bookingForm.reset();
-    this.submitted.set(false);
+    try {
+      const res = await firstValueFrom(
+        this._booking.createBooking(payload)
+          .pipe(finalize(() => {
+            this.isLoading.set(false),
+            this.submitted.set(false)
+          }
+        ))
+      );
+
+      if (!res.succeeded) {
+        console.error(res.errors);        
+        this.errorMessage.set(res.message);
+      }
+
+      // TODO: Add modal trigger here when success
+
+      this.bookingForm.reset({
+        onMedication: false
+      });
+    }
+    catch (err) {
+      console.error(err);
+      this.errorMessage.set('Unexpexted error occured, please try again')
+    }
   }
 }
