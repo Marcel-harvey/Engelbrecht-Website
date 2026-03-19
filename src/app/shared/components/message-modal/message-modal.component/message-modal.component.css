@@ -1,0 +1,51 @@
+.message-modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+
+    z-index: 800;
+}
+
+.message-wrapper {
+    width: 400px;
+    max-width: 90%;
+
+    background-color: var(--light-background-color);
+    border-radius: var(--border-radius);
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+.message-wrapper h2 {
+    text-align: center;
+}
+
+.message-wrapper p {
+    margin: 20px 0;
+    line-height: 1.5rem;
+}
+
+.success {
+    color: var(--gold);
+}
+
+.error {
+    color: red;
+}
+
+.warning {
+    color: orange;
+}

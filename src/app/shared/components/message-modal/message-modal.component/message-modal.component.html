@@ -1,1 +1,22 @@
-<p>message-modal.component works!</p>
+@if (message()) {
+    <section 
+        class="message-modal"
+        (click)="onBackdropClick()">
+        <div 
+            class="message-wrapper card-gradient"
+            (click)="$event.stopPropagation()">
+            <h2 [ngClass]="message()!.type.toLocaleLowerCase()">
+                {{ message()!.title }}
+            </h2>
+
+            <p>{{ message()!.message }}</p>
+
+            <button 
+                class="second-button"
+                (click)="onConfirm()">
+                Continue
+            </button>
+        </div>
+    </section>  
+}
+
