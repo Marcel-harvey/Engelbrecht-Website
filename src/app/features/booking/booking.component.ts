@@ -61,6 +61,30 @@ export class BookingComponent implements OnInit {
   get formControl() {
     return this.bookingForm.controls;
   }
+  
+  get medicationArray(): FormArray<MedicationForm> {
+    return this.bookingForm.controls.medication as FormArray<MedicationForm>;
+  }
+
+  addMedication() {
+    this.medicationArray.push(
+      this.fb.group({
+        name: this.fb.nonNullable.control('', Validators.required)
+      })
+    )
+  }
+
+  removeMedication(index: number) {
+    if (this.medicationArray.length > 1)
+      this.medicationArray.removeAt(index);
+  }
+
+  /**
+   * Sets the on mediaction to true when checkbox is clicked
+   */
+  setMedication() {
+    this.formControl.onMedication.patchValue(true);
+  }
 
   async onSubmit(): Promise<void> {
     this.submitted.set(true);
