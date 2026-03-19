@@ -35,7 +35,7 @@ export class BookingComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(3)]],
       surname: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^\+?\d{10,15}$/)]],
+      phone: ['', [Validators.required, Validators.pattern(/0[6-8][0-9]{8}$/)]],
       address: ['', ],
       service: ['', Validators.required],
       onMedication: [false],
