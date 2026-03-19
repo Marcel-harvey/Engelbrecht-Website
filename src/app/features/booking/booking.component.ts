@@ -26,7 +26,6 @@ export class BookingComponent implements OnInit {
   // UI State
   readonly submitted = signal<boolean>(false);
   readonly errorMessage = signal<string>('');
-  successMessage = '';
   readonly isLoading = signal<boolean>(false);
 
   readonly services = signal<ServiceInterface[] | null>(null);
