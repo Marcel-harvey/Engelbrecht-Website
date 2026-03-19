@@ -46,6 +46,16 @@ export class BookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.services.set(this._service.getAllServices());
+    // this.addMedication() only use if backend wants an empty array instead of null
+    this.formControl.onMedication.valueChanges.subscribe(value => {
+      if (value) {
+        if (this.medicationArray.length === 0) {
+          this.addMedication();
+        }
+      } else {
+        this.medicationArray.clear(); // removes all meds when unchecked
+      }
+    });
   }
 
   get formControl() {
