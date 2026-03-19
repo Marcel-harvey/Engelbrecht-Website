@@ -30,11 +30,15 @@ export class BookingComponent implements OnInit {
 
   readonly services = signal<ServiceInterface[] | null>(null);
 
-    bookingForm = this.fb.group({
-      fullName: ['', [Validators.required, Validators.minLength(3)]],
+  readonly bookingForm = this.fb.nonNullable.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      surname: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^\+?\d{10,15}$/)]],
+      address: ['', ],
       service: ['', Validators.required],
+      onMedication: [false],
+      medication: this.fb.array<MedicationForm>([]),
       date: ['', Validators.required],
       time: ['', Validators.required],
       notes: ['']
