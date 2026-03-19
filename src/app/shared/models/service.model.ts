@@ -8,3 +8,7 @@ export interface ServiceInterface {
     image: string
     popular?: boolean
 }
+
+export interface ServiceTypeInterface {
+    id: number;
+}
