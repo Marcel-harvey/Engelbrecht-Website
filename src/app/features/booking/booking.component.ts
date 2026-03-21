@@ -7,6 +7,7 @@ import { BookingService } from './services/booking.service';
 import { CreateBookingInterface } from './models/booking.model';
 import { CustomerDetailsInterface } from '../../shared/models/customer.model';
 import { MessageService } from '../../shared/services/modal/message.service';
+import { BookingDateInterface } from '../../shared/models/booking.model';
 
 type MedicationForm = FormGroup<{
   name: FormControl<string>;
@@ -104,17 +105,22 @@ export class BookingComponent implements OnInit {
       surname: this.formControl.surname.value,
       email: this.formControl.email.value,
       phoneNumber: this.formControl.phone.value,
-      address: this.formControl.address.value
+      address: this.formControl.address.value || ''
+    }
+
+    const bookingDate: BookingDateInterface = {
+      date: this.formControl.date.value,
+      startTime: this.formControl.time.value + ':00'
     }
 
     const payload: CreateBookingInterface = {
       customer: customer,
-      serviceType: {id: Number(this.formControl.service.value)},
-      date: {date: this.formControl.date.value},
+      serviceId: Number(this.formControl.service.value),
+      bookingDate: bookingDate,
       medication: this.medicationArray.value
         .map(m => m.name)
         .filter((name): name is string => !!name),
-      reason: this.formControl.notes.value
+      reason: this.formControl.notes.value || ''
     };
 
     try {
@@ -128,10 +134,10 @@ export class BookingComponent implements OnInit {
       );
 
       if (!res.succeeded) {
-        console.error(res.errors);
+        // console.error(res.errors);
         this._modal.open({
           title: 'Error',
-          message: 'Failed to create booking, please try again',
+          message: res.message,
           type: 'error'
         });
         return;
