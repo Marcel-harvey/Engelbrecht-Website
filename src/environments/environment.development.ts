@@ -1,5 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:7250',
-  appName: 'Engelbrecht Dev'
+  apiUrl: 'https://localhost:7250/api',
 };
