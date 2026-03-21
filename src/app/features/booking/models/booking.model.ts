@@ -4,8 +4,8 @@ import { ServiceTypeInterface } from "../../../shared/models/service.model";
 
 export interface CreateBookingInterface {
     customer: CustomerDetailsInterface;
-    serviceType: ServiceTypeInterface;
-    date: BookingDateInterface;
+    serviceId: number;
+    bookingDate: BookingDateInterface;
     medication: string[];
     reason: string;
 }
