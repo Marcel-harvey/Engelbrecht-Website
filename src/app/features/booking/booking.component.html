@@ -187,7 +187,9 @@
 
             <button 
                 type="submit" 
-                class="btn-submit">Book Now
+                class="btn-submit"
+                [disabled]="isLoading() && bookingForm.invalid">
+                Book Now
             </button>
         </form>
     </div>

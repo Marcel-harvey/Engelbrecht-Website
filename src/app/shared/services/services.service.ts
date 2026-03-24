@@ -1,10 +1,22 @@
-import { Injectable } from "@angular/core"
+import { inject, Injectable } from "@angular/core"
 import { ServiceInterface } from "../models/service.model"
+import { environment } from "../../../environments/environment.development";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { ApiResponse } from "../models/api-response.model";
 
 @Injectable({
     providedIn: 'root'
 })
-export class ServiceService {
+export class ServiceService { 
+    // Dependancies
+    private http = inject(HttpClient);
+    private baseUrl = `${environment.apiUrl}/service`
+
+    getAllServiceTypes():Observable<ApiResponse<ServiceInterface[]>> {
+
+        return this.http.get<ApiResponse<ServiceInterface[]>>(`${this.baseUrl}`)
+    }
 
     getAllServices(): ServiceInterface[] {
 

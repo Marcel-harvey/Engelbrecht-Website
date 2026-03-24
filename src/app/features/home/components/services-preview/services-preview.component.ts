@@ -2,11 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { ServiceService } from '../../../../shared/services/services.service';
 import { ServiceInterface } from '../../../../shared/models/service.model';
 import { CurrencyPipe } from '@angular/common';
-
-interface Service {
-  title: string;
-  description: string;
-}
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-services-preview',
@@ -16,14 +12,29 @@ interface Service {
 })
 export class ServicesPreviewComponent implements OnInit {
   // Service injection
-  private readonly _service = inject(ServiceService)
+  private readonly _serviceType = inject(ServiceService)
 
-  readonly services = signal<ServiceInterface[] | null>(null);
+  // UI State
+  readonly services = signal<ServiceInterface[]>([]);
 
   /**
-   * Set the service signal to the services shared Service
+   * Get the serviceTypes from backend
+   * Set response to services signal
    */
-  ngOnInit(): void {
-    this.services.set(this._service.getAllServices());
+  async ngOnInit(): Promise<void> {
+    try {
+        const res = await firstValueFrom(
+        this._serviceType.getAllServiceTypes()
+      )
+
+      if (!res.succeeded) {
+        console.error(res.errors);
+        return;
+      }
+      this.services.set(res.data);
+    }
+    catch (err) {
+      console.error(err);
+    }
   }
 }
