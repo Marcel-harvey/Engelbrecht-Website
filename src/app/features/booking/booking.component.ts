@@ -22,7 +22,7 @@ type MedicationForm = FormGroup<{
 export class BookingComponent implements OnInit {
   // Depandancies
   private readonly fb = inject(FormBuilder);
-  private readonly _service = inject(ServiceService);
+  private readonly _serviceType = inject(ServiceService);
   private readonly _booking = inject(BookingService);
   private readonly _modal = inject(MessageService);
 
@@ -46,15 +46,37 @@ export class BookingComponent implements OnInit {
       notes: ['']
     });
 
-  ngOnInit(): void {
-    this.services.set(this._service.getAllServices());
+  async ngOnInit(): Promise<void> {
+    try {
+      this.isLoading.set(true);
+      const res = await firstValueFrom(
+        this._serviceType.getAllServiceTypes()
+          .pipe(finalize(() => this.isLoading.set(false)))
+      )
+      if (!res.succeeded) {
+        console.error(res.errors);
+          this._modal.open({
+          title: 'Error',
+          message: 'Unexpected error loading booking, please refresh the page',
+          type: 'error'
+        });
+        return;
+      }
+
+      this.services.set(res.data);
+    }
+    catch (err) {
+      console.error(err);
+    }
+
     // this.addMedication() only use if backend wants an empty array instead of null
     this.formControl.onMedication.valueChanges.subscribe(value => {
       if (value) {
         if (this.medicationArray.length === 0) {
           this.addMedication();
         }
-      } else {
+      } 
+      else {
         this.medicationArray.clear(); // removes all meds when unchecked
       }
     });
